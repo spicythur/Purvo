@@ -91,10 +91,10 @@ export default function USPSection() {
               className="flex gap-5 items-start pl-5 opacity-0"
             >
               <div>
-                <h3 className="font-inter font-bold text-[2rem] text-[#2C1F14] mb-2">
+                <h3 className="font-inter font-bold text-[1.2rem] sm:text-[2rem] text-[#2C1F14] mb-2">
                   {usp.title}
                 </h3>
-                <p className="font-inter font text-[1.5rem] leading-relaxed text-brown">
+                <p className="font-inter font text-[1rem] sm:text-[1.5rem] leading-relaxed text-brown">
                   {usp.description}
                 </p>
               </div>
