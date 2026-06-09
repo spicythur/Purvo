@@ -46,11 +46,11 @@ export default function StorySection() {
         <img
           src="/images/purvo_moment.png"
           alt="A moment with Purvo"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
         />
 
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-start pt-20 px-8 sm:px-16 md:px-24">
+        <div className="absolute inset-0 flex flex-col justify-center items-start sm:justify-center sm:items-start text-start sm:text-left pt-15 px-8 sm:px-16 md:px-24">
 
           {/* Label */}
           <p

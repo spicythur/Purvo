@@ -94,16 +94,16 @@ export default function ShowcaseSection() {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 justify-items-center sm:grid-cols-3 gap-8 sm:gap-6 md:gap-10">
+      {/* Cards - Mobile: slider, Desktop: grid */}
+      <div className="flex sm:grid sm:grid-cols-3 gap-8 sm:gap-6 md:gap-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-8 px-8 sm:mx-0 sm:px-0 pb-4 sm:pb-0">
         {variants.map((v, i) => (
           <div
             key={v.name}
             ref={(el) => (cardsRef.current[i] = el)}
-            className="flex flex-col group opacity-0"
+            className="flex flex-col items-center sm:items-start group opacity-0 min-w-[85vw] sm:min-w-0 snap-center text-center sm:text-left"
           >
             {/* Image */}
-            <div className="w-full max-w-[300px] mx-auto sm:mx-0 overflow-hidden mb-5">
+            <div className="w-full max-w-[300px] overflow-hidden mb-5">
               <img
                 src={v.image}
                 alt={v.name}
@@ -136,6 +136,13 @@ export default function ShowcaseSection() {
               Get {v.name} →
             </a>
           </div>
+        ))}
+      </div>
+
+      {/* Scroll indicator - mobile only */}
+      <div className="flex sm:hidden justify-center gap-2 mt-6">
+        {variants.map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 rounded-full bg-espresso/30" />
         ))}
       </div>
     </section>
