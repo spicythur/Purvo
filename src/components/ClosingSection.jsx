@@ -63,10 +63,21 @@ export default function ClosingSection() {
       </h2>
 
       {/* Subtext */}
-      <p ref={subRef} className="font-inter font-light text-[0.8rem] sm:text-[1.2rem] text-warm/40 leading-relaxed mb-12 relative z-10 opacity-0">
-        And you don't have to figure everything out today.<br />
-        Purvo will still be here — quiet, slow, present.
-      </p>
+      <div ref={subRef} className="font-inter font-light text-[0.8rem] sm:text-[1.2rem] text-warm/40 leading-relaxed mb-12 relative z-10 opacity-0">
+        <p>
+          And you don't have to figure everything out today.
+        </p>
+        <p>
+          Purvo will still be here — quiet, slow, present.
+        </p>
+        <p className="mt-4 text-warm/30">
+          <a href="#story" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Our Story</a>
+          {" · "}
+          <a href="#scents" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Scents</a>
+          {" · "}
+          <a href="#why-purvo" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Why Purvo</a>
+        </p>
+      </div>
 
       {/* CTA */}
       <a

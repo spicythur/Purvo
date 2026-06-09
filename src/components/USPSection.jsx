@@ -103,6 +103,13 @@ export default function USPSection() {
         </div>
 
       </div>
+
+      {/* Internal Link */}
+      <div className="text-center mt-16">
+        <a href="#scents" className="text-[0.7rem] tracking-[0.2em] uppercase text-espresso border-b border-espresso pb-1 hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light">
+          Discover Our Scents →
+        </a>
+      </div>
     </section>
   );
 }

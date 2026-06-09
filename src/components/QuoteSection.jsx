@@ -8,6 +8,7 @@ export default function QuoteSection() {
   const sectionRef = useRef(null);
   const lineRef = useRef(null);
   const quoteRef = useRef(null);
+  const linkRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -44,6 +45,24 @@ export default function QuoteSection() {
           },
         }
       );
+
+      // Link fade up
+      gsap.fromTo(
+        linkRef.current,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.6,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -55,6 +74,9 @@ export default function QuoteSection() {
       <p ref={quoteRef} className="font-baskerville text-[2rem] sm:text-[4rem] md:text-[5rem] leading-snug text-warm max-w-7xl mx-auto opacity-0">
         "Not every scent is meant to impress. Some are meant to be remembered."
       </p>
+      <a ref={linkRef} href="#scents" className="inline-block mt-8 text-[0.65rem] tracking-[0.2em] uppercase text-warm/50 hover:text-warm transition-colors duration-500 font-inter font-light opacity-0">
+        Find yours →
+      </a>
     </section>
   );
 }
