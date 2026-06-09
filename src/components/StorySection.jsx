@@ -39,7 +39,7 @@ export default function StorySection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-full">
+    <section ref={sectionRef} id="story" className="relative w-full h-full">
 
       {/* Full Width Image */}
       <div className="relative w-full h-full overflow-hidden">

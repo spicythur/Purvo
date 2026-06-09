@@ -62,13 +62,14 @@ export default function HeroSection() {
       </div>
 
       {/* CTA */}
-      <button
+      <a
         ref={ctaRef}
+        href="#scents"
         className="flex items-center gap-3 text-[0.65rem] sm:text-[0.75rem] tracking-[0.2em] uppercase text-espresso border-b border-espresso pb-1 hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light group opacity-0"
       >
         <span>Find Your Scent</span>
         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-      </button>
+      </a>
     </section>
   );
 }

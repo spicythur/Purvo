@@ -77,7 +77,7 @@ export default function ShowcaseSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-warm px-8 sm:px-16 md:px-24 py-20 sm:py-28">
+    <section ref={sectionRef} id="scents" className="bg-warm px-8 sm:px-16 md:px-24 py-20 sm:py-28">
 
       {/* Header */}
       <div ref={headerRef} className="text-center mb-16 opacity-0">

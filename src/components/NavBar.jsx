@@ -6,12 +6,13 @@ export default function Navbar() {
   const navRef = useRef(null);
   const logoRef = useRef(null);
   const burgerRef = useRef(null);
+  const lastScroll = useRef(0);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Entrance animation
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // Logo fade in dari atas
       tl.fromTo(
         logoRef.current,
         { y: -20, opacity: 0 },
@@ -19,41 +20,64 @@ export default function Navbar() {
         0.5
       );
 
-      // Hamburger fade in dari atas
       tl.fromTo(
         burgerRef.current,
         { y: -20, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8 },
         0.6
       );
+
+      // Hide/show on scroll
+      const handleScroll = () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScroll.current && currentScroll > 100) {
+          // Scroll down → hide
+          gsap.to(navRef.current, {
+            y: "-100%",
+            duration: 0.4,
+            ease: "power2.in",
+          });
+        } else {
+          // Scroll up → show
+          gsap.to(navRef.current, {
+            y: "0%",
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+
+        lastScroll.current = currentScroll;
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
     }, navRef);
 
     return () => ctx.revert();
   }, []);
 
   const navItems = [
-    { label: "Our Story", href: "#our-story" },
+    { label: "Our Story", href: "#story" },
     { label: "Scents", href: "#scents" },
-    { label: "Shop", href: "#shop" },
-    { label: "Contact", href: "#contact" },
+    { label: "Why Purvo", href: "#why-purvo" },
+    { label: "Shop", href: "https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652", external: true },
   ];
 
   const socials = [
-    { label: "Instagram", href: "#" },
-    { label: "TikTok", href: "#" },
-    { label: "Pinterest", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/lepurvoparfume/" },
+    { label: "Shopee", href: "https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652" },
+    { label: "Tokopedia", href: "https://tokopedia.link/shtQotQTHQb" },
   ];
 
   return (
     <>
       {/* Top Bar */}
       <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 sm:px-10 py-5">
-        {/* Logo */}
         <a ref={logoRef} href="/" className="relative z-[60] opacity-0">
           <img src="/images/logo.svg" alt="Purvo" className="h-6 sm:h-8 md:h-10" />
         </a>
 
-        {/* Hamburger */}
         <button
           ref={burgerRef}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -91,7 +115,9 @@ export default function Navbar() {
               >
                 <a
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  onClick={() => !item.external && setMenuOpen(false)}
                   className={`block font-baskerville text-3xl sm:text-5xl md:text-6xl text-charcoal hover:text-espresso transition-all duration-700 ${
                     menuOpen
                       ? "translate-y-0 opacity-100"
@@ -127,6 +153,8 @@ export default function Navbar() {
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-xs tracking-[0.15em] uppercase text-espresso hover:text-charcoal transition-colors duration-300 font-inter font-light"
                 >
                   {s.label}
@@ -140,8 +168,9 @@ export default function Navbar() {
                 Ready to find yours?
               </p>
               <a
-                href="#shop"
-                onClick={() => setMenuOpen(false)}
+                href="https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-block text-xs tracking-[0.2em] uppercase text-warm bg-espresso px-8 py-3 hover:bg-charcoal transition-colors duration-300 font-inter font-light text-center"
               >
                 Shop Now

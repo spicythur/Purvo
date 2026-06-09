@@ -4,6 +4,8 @@ import StorySection from "./components/StorySection";
 import ShowcaseSection from "./components/ShowcaseSection";
 import QuoteSection from "./components/QuoteSection";
 import USPSection from "./components/USPSection";
+import ClosingSection from "./components/ClosingSection";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -11,14 +13,11 @@ function App() {
     <div>
       <NavBar />
 
-      {/* Wrapper tinggi 200vh buat scroll space */}
+      {/* Overlapping: Story di belakang, Hero di depan */}
       <div className="relative" style={{ height: "200vh" }}>
-        {/* Story: di belakang, sticky nempel */}
         <div className="sticky top-0 z-0 h-screen">
           <StorySection />
         </div>
-
-        {/* Hero: di depan, nutupin story. Scroll → hero naik → story terungkap */}
         <div className="relative z-10" style={{ marginTop: "-100vh" }}>
           <HeroSection />
         </div>
@@ -27,6 +26,8 @@ function App() {
       <ShowcaseSection />
       <QuoteSection />
       <USPSection />
+      <ClosingSection />
+      <Footer />
     </div>
   );
 }
