@@ -1,7 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+  const logoRef = useRef(null);
+  const burgerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // Logo fade in dari atas
+      tl.fromTo(
+        logoRef.current,
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        0.5
+      );
+
+      // Hamburger fade in dari atas
+      tl.fromTo(
+        burgerRef.current,
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        0.6
+      );
+    }, navRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const navItems = [
     { label: "Our Story", href: "#our-story" },
@@ -19,16 +47,17 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 sm:px-10 py-5">
+      <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 sm:px-10 py-5">
         {/* Logo */}
-        <a href="/" className="relative z-[60]">
+        <a ref={logoRef} href="/" className="relative z-[60] opacity-0">
           <img src="/images/logo.svg" alt="Purvo" className="h-6 sm:h-8 md:h-10" />
         </a>
 
         {/* Hamburger */}
         <button
+          ref={burgerRef}
           onClick={() => setMenuOpen(!menuOpen)}
-          className="relative z-[60] w-12 h-5 flex flex-col justify-between cursor-pointer group"
+          className="relative z-[60] w-12 h-5 flex flex-col justify-between cursor-pointer group opacity-0"
           aria-label="Menu"
         >
           <span
