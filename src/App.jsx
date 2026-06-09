@@ -2,6 +2,9 @@ import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import StorySection from "./components/StorySection";
 import ShowcaseSection from "./components/ShowcaseSection";
+import QuoteSection from "./components/QuoteSection";
+import USPSection from "./components/USPSection";
+
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
       </div>
 
       <ShowcaseSection />
+      <QuoteSection />
+      <USPSection />
     </div>
   );
 }
