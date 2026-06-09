@@ -13,20 +13,23 @@ function App() {
     <div>
       <NavBar />
 
-      {/* Overlapping: Story di belakang, Hero di depan */}
-      <div className="relative" style={{ height: "200vh" }}>
-        <div className="sticky top-0 z-0 h-screen">
-          <StorySection />
+      <main>
+        {/* Overlapping: Story di belakang, Hero di depan */}
+        <div className="relative" style={{ height: "200vh" }}>
+          <div className="sticky top-0 z-0 h-screen">
+            <StorySection />
+          </div>
+          <div className="relative z-10" style={{ marginTop: "-100vh" }}>
+            <HeroSection />
+          </div>
         </div>
-        <div className="relative z-10" style={{ marginTop: "-100vh" }}>
-          <HeroSection />
-        </div>
-      </div>
 
-      <ShowcaseSection />
-      <QuoteSection />
-      <USPSection />
-      <ClosingSection />
+        <ShowcaseSection />
+        <QuoteSection />
+        <USPSection />
+        <ClosingSection />
+      </main>
+
       <Footer />
     </div>
   );
