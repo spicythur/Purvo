@@ -47,16 +47,19 @@ export default function HeroSection() {
       {/* Title */}
       <h1
         ref={titleRef}
-        className="font-baskerville text-[2.8rem] sm:text-[4rem] md:text-[4rem] leading-[0.95] tracking-[-0.02em] text-charcoal mb-10 sm:mb-14 uppercase opacity-0"
+        className="font-baskerville text-[2.8rem] sm:text-[4rem] md:text-[4rem] leading-[0.95] tracking-[-0.02em] text-charcoal mb-4 sm:mb-6 uppercase opacity-0"
       >
         SPREAD<br />YOUR SCENT
       </h1>
+      <p className="text-[0.6rem] sm:text-[0.75rem] tracking-[0.25em] text-espresso/60 uppercase font-inter font-light mb-10 sm:mb-14">
+        Extrait de Parfum Indonesia
+      </p>
 
       {/* Bottle Image */}
       <div ref={bottleRef} className="mb-10 sm:mb-14 opacity-0">
         <img
           src="/images/purvo1.png"
-          alt="Le'Purvo Parfume Bottle"
+          alt="Purvo Parfume Bottle"
           className="w-[10rem] sm:w-[13.75rem] md:w-[17.5rem] max-w-[90%] object-contain drop-shadow-sm"
         />
       </div>

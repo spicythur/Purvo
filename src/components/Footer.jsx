@@ -63,7 +63,7 @@ export default function Footer() {
           Scents
         </a>
         <a href="#why-purvo" className="text-[0.6rem] tracking-[0.25em] uppercase text-espresso hover:text-charcoal transition-colors duration-500 font-inter font-light">
-          Why Le'Purvo
+          Why Purvo
         </a>
         <a
           href="https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652"
@@ -96,9 +96,9 @@ export default function Footer() {
 
       {/* Bottom */}
       <div ref={bottomRef} className="relative z-10 flex flex-col items-center gap-2 opacity-0">
-        <img src="/images/logo.svg" alt="Le'Purvo" className="h-4 sm:h-5 opacity-60 mb-2" />
+        <img src="/images/logo.svg" alt="Purvo" className="h-4 sm:h-5 opacity-60 mb-2" />
         <p className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.15em] text-espresso/50 font-inter font-light">
-          © 2025 Le'Purvo Parfume. All rights reserved.
+          © 2025 Purvo. All rights reserved.
         </p>
       </div>
 
