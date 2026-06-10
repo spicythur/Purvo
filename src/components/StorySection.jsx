@@ -45,7 +45,7 @@ export default function StorySection() {
       <div className="relative w-full h-full overflow-hidden">
         <img
           src="/images/purvo_moment.png"
-          alt="A moment with Purvo"
+          alt="A moment with Le'Purvo"
           className="w-full h-full object-cover object-center"
         />
 
@@ -74,7 +74,7 @@ export default function StorySection() {
               Somewhere between the morning alarm and the last scroll before sleep, we stopped checking in with ourselves. Not because we didn't want to but because nothing around us asked us to.
             </p>
             <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.3rem] leading-relaxed text-white/80 font-inter">
-              Purvo was born in that overlooked space. The space between one thing and the next. The space that, when given attention, becomes the most honest place you'll visit all day. <a href="#scents" className="underline underline-offset-4 hover:text-white transition-colors duration-300">Discover our scents</a>.
+              Le'Purvo was born in that overlooked space. The space between one thing and the next. The space that, when given attention, becomes the most honest place you'll visit all day. <a href="#scents" className="underline underline-offset-4 hover:text-white transition-colors duration-300">Discover our scents</a>.
             </p>
           </div>
 

@@ -89,7 +89,7 @@ export default function ShowcaseSection() {
           are you today
         </h2>
         <p className="text-[0.6rem] sm:text-[0.8rem] md:text-[1.2rem] text-charcoal/50 font-inter leading-relaxed mx-auto">
-          Each Purvo variant carries a different kind of stillness.<br />
+          Each Le'Purvo variant carries a different kind of stillness.<br />
           Find the one that feels like coming home.
         </p>
       </div>

@@ -74,7 +74,7 @@ export default function USPSection() {
         {/* Left */}
         <div ref={headingRef} className="opacity-0">
           <p className="text-[0.8rem] sm:text-[1.5rem] tracking-[1rem] text-brown uppercase mb-6 font-inter">
-            Why Purvo
+            Why Le'Purvo
           </p>
           <h2 className="font-baskerville text-[4rem] sm:text-[6rem] md:text-[7.5rem] leading-[0.95] text-brown">
             Made<br />slowly.<br />

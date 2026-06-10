@@ -60,7 +60,7 @@ export default function Navbar() {
   const navItems = [
     { label: "Our Story", href: "#story" },
     { label: "Scents", href: "#scents" },
-    { label: "Why Purvo", href: "#why-purvo" },
+    { label: "Why Le'Purvo", href: "#why-purvo" },
     { label: "Shop", href: "https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652", external: true },
   ];
 
@@ -75,7 +75,7 @@ export default function Navbar() {
       {/* Top Bar */}
       <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 sm:px-10 py-5">
         <a ref={logoRef} href="/" className="relative z-[60] opacity-0">
-          <img src="/images/logo.svg" alt="Purvo" className="h-6 sm:h-8 md:h-10" />
+          <img src="/images/logo.svg" alt="Le'Purvo" className="h-6 sm:h-8 md:h-10" />
         </a>
 
         <button
