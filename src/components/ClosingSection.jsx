@@ -68,14 +68,14 @@ export default function ClosingSection() {
           And you don't have to figure everything out today.
         </p>
         <p>
-          Purvo will still be here — quiet, slow, present.
+          Le'Purvo will still be here — quiet, slow, present.
         </p>
         <p className="mt-4 text-warm/30">
           <a href="#story" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Our Story</a>
           {" · "}
           <a href="#scents" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Scents</a>
           {" · "}
-          <a href="#why-purvo" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Why Purvo</a>
+          <a href="#why-purvo" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Why Le'Purvo</a>
         </p>
       </div>
 

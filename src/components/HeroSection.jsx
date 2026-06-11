@@ -59,7 +59,7 @@ export default function HeroSection() {
       <div ref={bottleRef} className="mb-10 sm:mb-14 opacity-0">
         <img
           src="/images/purvo1.png"
-          alt="Purvo Parfume Bottle"
+          alt="Le'Purvo Parfume Bottle"
           className="w-[10rem] sm:w-[13.75rem] md:w-[17.5rem] max-w-[90%] object-contain drop-shadow-sm"
         />
       </div>
