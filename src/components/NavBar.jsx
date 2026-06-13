@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
   const logoRef = useRef(null);
   const burgerRef = useRef(null);
+  const switcherRef = useRef(null);
   const lastScroll = useRef(0);
 
   useEffect(() => {
@@ -25,6 +28,13 @@ export default function Navbar() {
         { y: -20, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8 },
         0.6
+      );
+
+      tl.fromTo(
+        switcherRef.current,
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        0.65
       );
 
       // Hide/show on scroll
@@ -58,10 +68,10 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { label: "Our Story", href: "#story" },
-    { label: "Scents", href: "#scents" },
-    { label: "Why Le'Purvo", href: "#why-purvo" },
-    { label: "Shop", href: "https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652", external: true },
+    { label: t("nav.ourStory"), href: "#story" },
+    { label: t("nav.scents"), href: "#scents" },
+    { label: t("nav.whyPurvo"), href: "#why-purvo" },
+    { label: t("nav.shop"), href: "https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652", external: true },
   ];
 
   const socials = [
@@ -78,7 +88,33 @@ export default function Navbar() {
           <img src="/images/logo.svg" alt="Le'Purvo" className="h-6 sm:h-8 md:h-10" />
         </a>
 
-        <button
+        <div className="flex items-center gap-4">
+          {/* Language Switcher */}
+          <div ref={switcherRef} className="relative z-[60] flex items-center gap-1.5 text-[0.7rem] sm:text-[0.75rem] tracking-[0.15em] uppercase font-inter opacity-0">
+            <button
+              onClick={() => i18n.changeLanguage("id")}
+              className={`transition-colors duration-300 px-1 ${
+                i18n.language.startsWith("id")
+                  ? "text-charcoal font-semibold"
+                  : "text-espresso/60 hover:text-espresso"
+              }`}
+            >
+              ID
+            </button>
+            <span className="text-espresso/25">|</span>
+            <button
+              onClick={() => i18n.changeLanguage("en")}
+              className={`transition-colors duration-300 px-1 ${
+                i18n.language.startsWith("en")
+                  ? "text-charcoal font-semibold"
+                  : "text-espresso/60 hover:text-espresso"
+              }`}
+            >
+              EN
+            </button>
+          </div>
+
+          <button
           ref={burgerRef}
           onClick={() => setMenuOpen(!menuOpen)}
           className="relative z-[60] w-12 h-5 flex flex-col justify-between cursor-pointer group opacity-0"
@@ -95,6 +131,7 @@ export default function Navbar() {
             }`}
           />
         </button>
+        </div>
       </nav>
 
       {/* Full-Screen Overlay */}
@@ -147,7 +184,7 @@ export default function Navbar() {
             {/* Socials */}
             <div className="flex flex-col gap-2">
               <p className="text-[10px] tracking-[0.2em] uppercase text-brown font-inter font-light mb-1">
-                Follow Us
+                {t("nav.followUs")}
               </p>
               {socials.map((s) => (
                 <a
@@ -165,7 +202,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="flex flex-col gap-3 justify-end">
               <p className="text-[10px] tracking-[0.2em] uppercase text-brown font-inter font-light">
-                Ready to find yours?
+                {t("nav.readyToFind")}
               </p>
               <a
                 href="https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652"
@@ -173,7 +210,7 @@ export default function Navbar() {
                 rel="noreferrer"
                 className="inline-block text-xs tracking-[0.2em] uppercase text-warm bg-espresso px-8 py-3 hover:bg-charcoal transition-colors duration-300 font-inter font-light text-center"
               >
-                Shop Now
+                {t("nav.shopNow")}
               </a>
             </div>
           </div>

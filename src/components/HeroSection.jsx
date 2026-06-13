@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const bottleRef = useRef(null);
@@ -48,18 +50,17 @@ export default function HeroSection() {
       <h1
         ref={titleRef}
         className="font-baskerville text-[2.8rem] sm:text-[4rem] md:text-[4rem] leading-[0.95] tracking-[-0.02em] text-charcoal mb-4 sm:mb-6 uppercase opacity-0"
-      >
-        SPREAD<br />YOUR SCENT
-      </h1>
+        dangerouslySetInnerHTML={{ __html: t("hero.spreadYourScent") }}
+      />
       <p className="text-[0.6rem] sm:text-[0.75rem] tracking-[0.25em] text-espresso/60 uppercase font-inter font-light mb-10 sm:mb-14">
-        Extrait de Parfum Indonesia
+        {t("hero.subtitle")}
       </p>
 
       {/* Bottle Image */}
       <div ref={bottleRef} className="mb-10 sm:mb-14 opacity-0">
         <img
           src="/images/purvo1.png"
-          alt="Le'Purvo Parfume Bottle"
+          alt={t("hero.bottleAlt")}
           className="w-[10rem] sm:w-[13.75rem] md:w-[17.5rem] max-w-[90%] object-contain drop-shadow-sm"
         />
       </div>
@@ -70,7 +71,7 @@ export default function HeroSection() {
         href="#scents"
         className="flex items-center gap-3 text-[0.65rem] sm:text-[0.75rem] tracking-[0.2em] uppercase text-espresso border-b border-espresso pb-1 hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light group opacity-0"
       >
-        <span>Find Your Scent</span>
+        <span>{t("hero.findYourScent")}</span>
         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
       </a>
     </section>

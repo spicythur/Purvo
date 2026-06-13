@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function StorySection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const labelRef = useRef(null);
   const titleRef = useRef(null);
@@ -45,7 +47,7 @@ export default function StorySection() {
       <div className="relative w-full h-full overflow-hidden">
         <img
           src="/images/purvo_moment.png"
-          alt="A moment with Le'Purvo"
+          alt={t("story.imageAlt")}
           className="w-full h-full object-cover object-center"
         />
 
@@ -57,7 +59,7 @@ export default function StorySection() {
             ref={labelRef}
             className="text-[0.6rem] sm:text-[1rem] md:text-[1.5rem] tracking-[0.3em] text-white/60 uppercase mb-2 font-inter font-light opacity-0"
           >
-            On Slowing Down
+            {t("story.label")}
           </p>
 
           {/* Title */}
@@ -65,16 +67,19 @@ export default function StorySection() {
             ref={titleRef}
             className="font-baskerville text-[2.5rem] sm:text-[4rem] md:text-[7.2rem] leading-[1] text-[#D9CFC4] mb-4 opacity-0"
           >
-            We forgot<br />how to <em className="text-[#2C1F14] font-bold italic">stop.</em>
+            <Trans i18nKey="story.title" components={{ 1: <em className="text-[#2C1F14] font-bold italic" /> }} />
           </h2>
 
           {/* Body */}
           <div ref={bodyRef} className="max-w-sm space-y-4 opacity-0">
             <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.3rem] leading-relaxed text-white/80 font-inter">
-              Somewhere between the morning alarm and the last scroll before sleep, we stopped checking in with ourselves. Not because we didn't want to but because nothing around us asked us to.
+              {t("story.body1")}
             </p>
             <p className="text-[0.8rem] sm:text-[1rem] md:text-[1.3rem] leading-relaxed text-white/80 font-inter">
-              Le'Purvo was born in that overlooked space. The space between one thing and the next. The space that, when given attention, becomes the most honest place you'll visit all day. <a href="#scents" className="underline underline-offset-4 hover:text-white transition-colors duration-300">Discover our scents</a>.
+              {t("story.body2")}{" "}
+              <a href="#scents" className="underline underline-offset-4 hover:text-white transition-colors duration-300">
+                {t("story.discoverLink")}
+              </a>.
             </p>
           </div>
 

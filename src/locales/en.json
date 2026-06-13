@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "ourStory": "Our Story",
+    "scents": "Scents",
+    "whyPurvo": "Why Le'Purvo",
+    "shop": "Shop",
+    "followUs": "Follow Us",
+    "readyToFind": "Ready to find yours?",
+    "shopNow": "Shop Now"
+  },
+  "hero": {
+    "spreadYourScent": "SPREAD<br/>YOUR SCENT",
+    "subtitle": "Extrait de Parfum Indonesia",
+    "findYourScent": "Find Your Scent",
+    "bottleAlt": "Le'Purvo Parfume Bottle"
+  },
+  "story": {
+    "imageAlt": "A moment with Le'Purvo",
+    "label": "On Slowing Down",
+    "title": "We forgot<br/>how to <1>stop.</1>",
+    "body1": "Somewhere between the morning alarm and the last scroll before sleep, we stopped checking in with ourselves. Not because we didn't want to but because nothing around us asked us to.",
+    "body2": "Le'Purvo was born in that overlooked space. The space between one thing and the next. The space that, when given attention, becomes the most honest place you'll visit all day.",
+    "discoverLink": "Discover our scents"
+  },
+  "showcase": {
+    "label": "Three Characters. One Question.",
+    "title": "<1>Which One</1><br/>are you today",
+    "subtitle": "Each Le'Purvo variant carries a different kind of stillness.<br/>Find the one that feels like coming home.",
+    "getButton": "Get",
+    "oglan": {
+      "mood": "Calm · Deep · Mysterious",
+      "description": "Still on the surface. Deep underneath."
+    },
+    "meetha": {
+      "mood": "Warm · Grounding · Intimate",
+      "description": "Warm, steady, and always home for others."
+    },
+    "blume": {
+      "mood": "Fresh · Growing · Gentle",
+      "description": "Still growing. Still becoming."
+    }
+  },
+  "quote": {
+    "text": "\"Not every scent is meant to impress. Some are meant to be remembered.\"",
+    "findYours": "Find yours"
+  },
+  "usp": {
+    "label": "Why Le'Purvo",
+    "title": "Made<br/>slowly.<br/><1>Meant to<br/>last.</1>",
+    "discoverScents": "Discover Our Scents",
+    "items": [
+      {
+        "title": "Lasts Up to 8 Hours",
+        "description": "An extrait concentration that stays — not to make an impression, but to accompany the day."
+      },
+      {
+        "title": "Packaging That Returns to the Earth",
+        "description": "Recyclable cardboard, because every small choice is a form of care."
+      },
+      {
+        "title": "Every Scent Has a Story",
+        "description": "We don't design fragrances. We design moments small, personal, and entirely yours."
+      }
+    ]
+  },
+  "closing": {
+    "label": "Spread Your Scent",
+    "title": "You don't have to<br/>be strong<br/>all the time.",
+    "sub1": "And you don't have to figure everything out today.",
+    "sub2": "Le'Purvo will still be here — quiet, slow, present.",
+    "cta": "Spread Your Scent"
+  },
+  "footer": {
+    "tagline": "Spread<br/>Your Scent",
+    "copyright": "© 2026 Le'Purvo. All rights reserved."
+  }
+}

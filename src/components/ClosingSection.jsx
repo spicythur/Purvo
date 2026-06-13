@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ClosingSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const labelRef = useRef(null);
   const lineRef = useRef(null);
@@ -51,31 +53,31 @@ export default function ClosingSection() {
 
       {/* Label */}
       <p ref={labelRef} className="teks-[1rem] sm:text-[1.2rem] tracking-[0.4em] text-brown uppercase mb-6 font-inter relative z-10 opacity-0">
-        Spread Your Scent
+        {t("closing.label")}
       </p>
 
       {/* Line */}
       <div ref={lineRef} className="w-20 sm:w-32 h-px bg-brown mb-10 relative z-10 opacity-0" />
 
       {/* Title */}
-      <h2 ref={titleRef} className="font-baskerville italic text-[2.5rem] sm:text-[3.5rem] md:text-[6rem] leading-[1.1] text-warm max-w-3xl mb-8 relative z-10 opacity-0">
-        You don't have to<br />be strong<br />all the time.
-      </h2>
+      <h2 ref={titleRef} className="font-baskerville italic text-[2.5rem] sm:text-[3.5rem] md:text-[6rem] leading-[1.1] text-warm max-w-3xl mb-8 relative z-10 opacity-0"
+        dangerouslySetInnerHTML={{ __html: t("closing.title") }}
+      />
 
       {/* Subtext */}
       <div ref={subRef} className="font-inter font-light text-[0.8rem] sm:text-[1.2rem] text-warm/40 leading-relaxed mb-12 relative z-10 opacity-0">
         <p>
-          And you don't have to figure everything out today.
+          {t("closing.sub1")}
         </p>
         <p>
-          Le'Purvo will still be here — quiet, slow, present.
+          {t("closing.sub2")}
         </p>
         <p className="mt-4 text-warm/30">
-          <a href="#story" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Our Story</a>
+          <a href="#story" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">{t("nav.ourStory")}</a>
           {" · "}
-          <a href="#scents" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Scents</a>
+          <a href="#scents" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">{t("nav.scents")}</a>
           {" · "}
-          <a href="#why-purvo" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">Why Le'Purvo</a>
+          <a href="#why-purvo" className="hover:text-warm transition-colors duration-300 underline underline-offset-4">{t("nav.whyPurvo")}</a>
         </p>
       </div>
 
@@ -87,7 +89,7 @@ export default function ClosingSection() {
         rel="noreferrer"
         className="relative z-10 flex items-center gap-4 px-10 py-4 border border-warm/30 text-[0.7rem] tracking-[0.2em] uppercase text-warm font-inter font-light hover:bg-warm hover:text-espresso transition-all duration-500 group opacity-0"
       >
-        <span>Spread Your Scent</span>
+        <span>{t("closing.cta")}</span>
         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
       </a>
 

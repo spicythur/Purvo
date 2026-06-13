@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,6 +21,7 @@ const usps = [
 ];
 
 export default function USPSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const cardsRef = useRef([]);
@@ -74,28 +76,27 @@ export default function USPSection() {
         {/* Left */}
         <div ref={headingRef} className="opacity-0">
           <p className="text-[0.8rem] sm:text-[1.5rem] tracking-[1rem] text-brown uppercase mb-6 font-inter">
-            Why Le'Purvo
+            {t("usp.label")}
           </p>
           <h2 className="font-baskerville text-[4rem] sm:text-[6rem] md:text-[7.5rem] leading-[0.95] text-brown">
-            Made<br />slowly.<br />
-            <em className="italic text-espresso">Meant to<br />last.</em>
+            <Trans i18nKey="usp.title" components={{ 1: <em className="italic text-espresso" /> }} />
           </h2>
         </div>
 
         {/* Right */}
         <div className="flex flex-col gap-10 pt-2">
-          {usps.map((usp, i) => (
+          {usps.map((_, i) => (
             <div
-              key={usp.title}
+              key={i}
               ref={(el) => (cardsRef.current[i] = el)}
               className="flex gap-5 items-start pl-5 opacity-0"
             >
               <div>
                 <h3 className="font-inter font-bold text-[1.2rem] sm:text-[2rem] text-[#2C1F14] mb-2">
-                  {usp.title}
+                  {t(`usp.items.${i}.title`)}
                 </h3>
                 <p className="font-inter font text-[1rem] sm:text-[1.5rem] leading-relaxed text-brown">
-                  {usp.description}
+                  {t(`usp.items.${i}.description`)}
                 </p>
               </div>
             </div>
@@ -107,7 +108,7 @@ export default function USPSection() {
       {/* Internal Link */}
       <div className="text-center mt-16">
         <a href="#scents" className="text-[0.7rem] tracking-[0.2em] uppercase text-espresso border-b border-espresso pb-1 hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light">
-          Discover Our Scents →
+          {t("usp.discoverScents")} →
         </a>
       </div>
     </section>

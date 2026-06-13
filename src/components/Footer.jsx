@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
+  const { t } = useTranslation();
   const footerRef = useRef(null);
   const taglineRef = useRef(null);
   const linksRef = useRef(null);
@@ -49,21 +51,21 @@ export default function Footer() {
 
       {/* Big Tagline */}
       <div ref={taglineRef} className="relative z-10 text-center mb-12 sm:mb-20 opacity-0">
-        <h2 className="font-baskerville italic text-[1.8rem] sm:text-[3.5rem] md:text-[5rem] leading-[1] text-espresso/30">
-          Spread<br />Your Scent
-        </h2>
+        <h2 className="font-baskerville italic text-[1.8rem] sm:text-[3.5rem] md:text-[5rem] leading-[1] text-espresso/30"
+          dangerouslySetInnerHTML={{ __html: t("footer.tagline") }}
+        />
       </div>
 
       {/* Links — grid on mobile, horizontal on desktop */}
       <div ref={linksRef} className="relative z-10 grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-x-8 gap-y-4 sm:gap-x-12 mb-12 sm:mb-16 text-center sm:text-left opacity-0">
         <a href="#story" className="text-[0.6rem] tracking-[0.25em] uppercase text-espresso hover:text-charcoal transition-colors duration-500 font-inter font-light">
-          Our Story
+          {t("nav.ourStory")}
         </a>
         <a href="#scents" className="text-[0.6rem] tracking-[0.25em] uppercase text-espresso hover:text-charcoal transition-colors duration-500 font-inter font-light">
-          Scents
+          {t("nav.scents")}
         </a>
         <a href="#why-purvo" className="text-[0.6rem] tracking-[0.25em] uppercase text-espresso hover:text-charcoal transition-colors duration-500 font-inter font-light">
-          Why Le'Purvo
+          {t("nav.whyPurvo")}
         </a>
         <a
           href="https://shopee.co.id/purvoparfume?categoryId=100630&entryPoint=ShopByPDP&itemId=28320727652"
@@ -98,7 +100,7 @@ export default function Footer() {
       <div ref={bottomRef} className="relative z-10 flex flex-col items-center gap-2 opacity-0">
         <img src="/images/logo.svg" alt="Le'Purvo" className="h-4 sm:h-5 opacity-60 mb-2" />
         <p className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.15em] text-espresso/50 font-inter font-light">
-          © 2025 Le'Purvo. All rights reserved.
+          {t("footer.copyright")}
         </p>
       </div>
 

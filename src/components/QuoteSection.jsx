@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function QuoteSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const lineRef = useRef(null);
   const quoteRef = useRef(null);
@@ -72,10 +74,10 @@ export default function QuoteSection() {
     <section ref={sectionRef} className="bg-[#2C1F14] px-8 sm:px-16 md:px-24 py-20 sm:py-28 text-center">
       <div ref={lineRef} className="w-[16rem] h-[0.5rem] rounded-lg bg-warm mx-auto mb-8 origin-center" />
       <p ref={quoteRef} className="font-baskerville text-[2rem] sm:text-[4rem] md:text-[5rem] leading-snug text-warm max-w-7xl mx-auto opacity-0">
-        "Not every scent is meant to impress. Some are meant to be remembered."
+        {t("quote.text")}
       </p>
       <a ref={linkRef} href="#scents" className="inline-block mt-8 text-[0.65rem] tracking-[0.2em] uppercase text-warm/50 hover:text-warm transition-colors duration-500 font-inter font-light opacity-0">
-        Find yours →
+        {t("quote.findYours")} →
       </a>
     </section>
   );

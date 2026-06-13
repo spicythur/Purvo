@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const variantKeys = ["oglan", "meetha", "blume"];
 
 const variants = [
   {
@@ -29,6 +32,7 @@ const variants = [
 ];
 
 export default function ShowcaseSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
   const cardsRef = useRef([]);
@@ -82,61 +86,62 @@ export default function ShowcaseSection() {
       {/* Header */}
       <div ref={headerRef} className="text-center mb-16 opacity-0">
         <p className="text-[0.5rem] sm:text-[0.8rem] md:text-[1.2rem] tracking-[0.35em] text-brown uppercase mb-4 font-inter">
-          Three Characters. One Question.
+          {t("showcase.label")}
         </p>
         <h2 className="font-baskerville text-[2.8rem] sm:text-[5rem] md:text-[7rem] leading-[1] text-espresso mb-4">
-          <em className="italic text-brown">Which One</em><br />
-          are you today
+          <Trans i18nKey="showcase.title" components={{ 1: <em className="italic text-brown" /> }} />
         </h2>
-        <p className="text-[0.6rem] sm:text-[0.8rem] md:text-[1.2rem] text-charcoal/50 font-inter leading-relaxed mx-auto">
-          Each Le'Purvo variant carries a different kind of stillness.<br />
-          Find the one that feels like coming home.
-        </p>
+        <p className="text-[0.6rem] sm:text-[0.8rem] md:text-[1.2rem] text-charcoal/50 font-inter leading-relaxed mx-auto"
+          dangerouslySetInnerHTML={{ __html: t("showcase.subtitle") }}
+        />
       </div>
 
       {/* Cards - Mobile: slider, Desktop: grid */}
       <div className="flex sm:grid sm:grid-cols-3 gap-8 sm:gap-6 md:gap-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-8 px-8 sm:mx-0 sm:px-0 pb-4 sm:pb-0">
-        {variants.map((v, i) => (
-          <div
-            key={v.name}
-            ref={(el) => (cardsRef.current[i] = el)}
-            className="flex flex-col items-center sm:items-start group opacity-0 min-w-[85vw] sm:min-w-0 snap-center text-center sm:text-left"
-          >
-            {/* Image */}
-            <div className="w-full max-w-[300px] overflow-hidden mb-5">
-              <img
-                src={v.image}
-                alt={v.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Mood */}
-            <p className="text-[0.6rem] tracking-[0.2em] text-brown uppercase mb-2 font-inter font-light">
-              {v.mood}
-            </p>
-
-            {/* Name */}
-            <h3 className="font-baskerville text-[1.8rem] text-espresso mb-3">
-              {v.name}
-            </h3>
-
-            {/* Description */}
-            <p className="text-[0.8rem] leading-relaxed text-charcoal/60 font-inter font-light mb-6 flex-1">
-              {v.description}
-            </p>
-
-            {/* CTA */}
-            <a
-              href={v.shopeeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[0.65rem] tracking-[0.15em] uppercase text-espresso border-b border-espresso pb-1 w-fit hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light"
+        {variants.map((v, i) => {
+          const key = variantKeys[i];
+          return (
+            <div
+              key={v.name}
+              ref={(el) => (cardsRef.current[i] = el)}
+              className="flex flex-col items-center sm:items-start group opacity-0 min-w-[85vw] sm:min-w-0 snap-center text-center sm:text-left"
             >
-              Get {v.name} →
-            </a>
-          </div>
-        ))}
+              {/* Image */}
+              <div className="w-full max-w-[300px] overflow-hidden mb-5">
+                <img
+                  src={v.image}
+                  alt={v.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Mood */}
+              <p className="text-[0.6rem] tracking-[0.2em] text-brown uppercase mb-2 font-inter font-light">
+                {t(`showcase.${key}.mood`)}
+              </p>
+
+              {/* Name */}
+              <h3 className="font-baskerville text-[1.8rem] text-espresso mb-3">
+                {v.name}
+              </h3>
+
+              {/* Description */}
+              <p className="text-[0.8rem] leading-relaxed text-charcoal/60 font-inter font-light mb-6 flex-1">
+                {t(`showcase.${key}.description`)}
+              </p>
+
+              {/* CTA */}
+              <a
+                href={v.shopeeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[0.65rem] tracking-[0.15em] uppercase text-espresso border-b border-espresso pb-1 w-fit hover:text-brown hover:border-brown transition-all duration-300 font-inter font-light"
+              >
+                {t("showcase.getButton")} {v.name} →
+              </a>
+            </div>
+          );
+        })}
       </div>
 
       {/* Scroll indicator - mobile only */}

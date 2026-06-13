@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "ourStory": "Cerita Kami",
+    "scents": "Aroma",
+    "whyPurvo": "Mengapa Le'Purvo",
+    "shop": "Belanja",
+    "followUs": "Ikuti Kami",
+    "readyToFind": "Siap menemukan aromamu?",
+    "shopNow": "Belanja Sekarang"
+  },
+  "hero": {
+    "spreadYourScent": "SEBARKAN<br/>AROMAMU",
+    "subtitle": "Extrait de Parfum Indonesia",
+    "findYourScent": "Temukan Aromamu",
+    "bottleAlt": "Botol Parfum Le'Purvo"
+  },
+  "story": {
+    "imageAlt": "Momen bersama Le'Purvo",
+    "label": "Tentang Melambat",
+    "title": "Kita lupa<br/>cara <1>berhenti.</1>",
+    "body1": "Di suatu antara alarm pagi dan scroll terakhir sebelum tidur, kita berhenti mengecek diri sendiri. Bukan karena tidak mau, tapi karena tak ada yang mengingatkan.",
+    "body2": "Le'Purvo lahir di ruang yang terlupakan itu. Ruang antara satu hal dan hal berikutnya. Ruang yang, saat diberi perhatian, menjadi tempat paling jujur yang kamu kunjungi sepanjang hari.",
+    "discoverLink": "Jelajahi aroma kami"
+  },
+  "showcase": {
+    "label": "Tiga Karakter. Satu Pertanyaan.",
+    "title": "<1>Yang Mana</1><br/>kamu hari ini",
+    "subtitle": "Setiap varian Le'Purvo membawa ketenangan yang berbeda.<br/>Temukan yang terasa seperti pulang.",
+    "getButton": "Dapatkan",
+    "oglan": {
+      "mood": "Tenang · Dalam · Misterius",
+      "description": "Tenang di permukaan. Dalam di bawahnya."
+    },
+    "meetha": {
+      "mood": "Hangat · Menenangkan · Intim",
+      "description": "Hangat, stabil, dan selalu jadi rumah untuk orang lain."
+    },
+    "blume": {
+      "mood": "Segar · Bertumbuh · Lembut",
+      "description": "Masih bertumbuh. Masih menjadi."
+    }
+  },
+  "quote": {
+    "text": "\"Tidak setiap aroma diciptakan untuk mengesankan. Beberapa diciptakan untuk dikenang.\"",
+    "findYours": "Temukan aromamu"
+  },
+  "usp": {
+    "label": "Mengapa Le'Purvo",
+    "title": "Dibuat<br/>perlahan.<br/><1>Dirancang<br/>tahan lama.</1>",
+    "discoverScents": "Jelajahi Aroma Kami",
+    "items": [
+      {
+        "title": "Tahan Hingga 8 Jam",
+        "description": "Konsentrasi extrait yang bertahan — bukan untuk mencolok, tapi untuk menemani harimu."
+      },
+      {
+        "title": "Kemasan yang Kembali ke Bumi",
+        "description": "Kardus daur ulang, karena setiap pilihan kecil adalah bentuk kepedulian."
+      },
+      {
+        "title": "Setiap Aroma Punya Cerita",
+        "description": "Kami tidak mendesain parfum. Kami mendesain momen — kecil, personal, dan sepenuhnya milikmu."
+      }
+    ]
+  },
+  "closing": {
+    "label": "Sebarkan Aromamu",
+    "title": "Kamu tidak harus<br/>selalu kuat.",
+    "sub1": "Dan kamu tidak harus menyelesaikan semua hari ini.",
+    "sub2": "Le'Purvo akan tetap di sini — tenang, perlahan, hadir.",
+    "cta": "Sebarkan Aromamu"
+  },
+  "footer": {
+    "tagline": "Sebarkan<br/>Aromamu",
+    "copyright": "© 2026 Le'Purvo. Hak cipta dilindungi."
+  }
+}
